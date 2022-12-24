@@ -28,44 +28,51 @@ df.info()
 ```
 
 ### Колонки
-``` 
- <class 'pandas.core.frame.DataFrame'>
+```shell
+<class 'pandas.core.frame.DataFrame'>
 RangeIndex: 107802 entries, 0 to 107801
-Data columns (total 30 columns):
- #   Column                      Non-Null Count   Dtype  
----  ------                      --------------   -----  
- 0   timestamp                   107802 non-null  object 
- 1   payment_value               107802 non-null  float64
- 2   zip_code                    107802 non-null  float64
- 3   city                        107802 non-null  object 
- 4   state                       107802 non-null  object 
- 5   latitude                    107802 non-null  float64
- 6   longitude                   107802 non-null  float64
- 7   items_quant                 107802 non-null  float64
- 8   product_category            107802 non-null  object 
- 9   date                        107802 non-null  object 
- 10  time                        107802 non-null  object 
- 11  weekday                     107802 non-null  object 
- 12  apparent_temperature_max    107802 non-null  float64
- 13  apparent_temperature_min    107802 non-null  float64
- 14  et0_fao_evapotranspiration  107802 non-null  float64
- 15  precipitation_hours         107802 non-null  float64
- 16  precipitation_sum           107802 non-null  float64
- 17  rain_sum                    107802 non-null  float64
- 18  snowfall_sum                107802 non-null  float64
- 19  sunrise                     107802 non-null  object 
- 20  sunset                      107802 non-null  object 
- 21  weathercode                 107802 non-null  float64
- 22  winddirection_10m_dominant  106933 non-null  float64
- 23  windgusts_10m_max           107802 non-null  float64
- 24  windspeed_10m_max           107802 non-null  float64
- 25  cloud_cover_total_mean_%    107802 non-null  float64
- 26  cloudcover_high_mean_%      107802 non-null  float64
- 27  cloudcover_low_mean_%       107802 non-null  float64
- 28  cloudcover_mid_mean_%       107802 non-null  float64
- 29  surface_pressure_mean_hPa   107802 non-null  float64
-dtypes: float64(21), object(9)
- ```
+Data columns (total 36 columns):
+ #   Column                         Non-Null Count   Dtype  
+---  ------                         --------------   -----  
+ 0   timestamp                      107802 non-null  object 
+ 1   payment_value                  107802 non-null  float64
+ 2   zip_code                       107802 non-null  float64
+ 3   city                           107802 non-null  object 
+ 4   state                          107802 non-null  object 
+ 5   latitude                       107802 non-null  float64
+ 6   longitude                      107802 non-null  float64
+ 7   items_quant                    107802 non-null  float64
+ 8   product_category               107802 non-null  object 
+ 9   date                           107802 non-null  object 
+ 10  time                           107802 non-null  object 
+ 11  weekday                        107802 non-null  object 
+ 12  apparent_temperature_max       107802 non-null  float64
+ 13  apparent_temperature_min       107802 non-null  float64
+ 14  et0_fao_evapotranspiration     107802 non-null  float64
+ 15  precipitation_hours            107802 non-null  float64
+ 16  precipitation_sum              107802 non-null  float64
+ 17  rain_sum                       107802 non-null  float64
+ 18  snowfall_sum                   107802 non-null  float64
+ 19  sunrise                        107802 non-null  object 
+ 20  sunset                         107802 non-null  object 
+ 21  weathercode                    107802 non-null  float64
+ 22  winddirection_10m_dominant     106933 non-null  float64
+ 23  windgusts_10m_max              107802 non-null  float64
+ 24  windspeed_10m_max              107802 non-null  float64
+ 25  cloud_cover_total_mean_%       107802 non-null  float64
+ 26  cloudcover_high_mean_%         107802 non-null  float64
+ 27  cloudcover_low_mean_%          107802 non-null  float64
+ 28  cloudcover_mid_mean_%          107802 non-null  float64
+ 29  surface_pressure_mean_hPa      107802 non-null  float64
+ 30  temperature_2m_max             107802 non-null  float64
+ 31  temperature_2m_min             107802 non-null  float64
+ 32  temperature_2m_hourly          107802 non-null  float64
+ 33  precipitation_hourly           107802 non-null  float64
+ 34  relative_humidity_2m_hourly    107802 non-null  float64
+ 35  daily_shortwave_radiation_sum  107802 non-null  float64
+dtypes: float64(27), object(9)
+memory usage: 29.6+ MB
+```
 
 ```shell
 - timestamp                         временная метка заказа в локальной таймзоне
@@ -98,7 +105,12 @@ dtypes: float64(21), object(9)
 - cloudcover_low_mean_%             облака и туман на высоте до 2х километров (%)
 - cloudcover_mid_mean_%             облака на высоте от 2х до 6 километров (%)   
 - surface_pressure_mean_hPa         атмосферное давление за день (hPa)
-
+- temperature_2m_max                максимальная дневная температура, два метра над землей (C°)
+- temperature_2m_min                минимальная дневная температура, два метра над землей (C°)
+- daily_shortwave_radiation_sum     суммарная солнечная радиация за день в МегаДжоулях (MJ/m²)
+- temperature_2m_hourly             температура на момент заказа (C°)
+- precipitation_hourly              количество осадков за предыдущий час (дождь, снег)
+- relative_humidity_2m_hourly       относительная влажность, 2 метра над землей (%)
 ```
 
 ### Описание полей
